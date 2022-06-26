@@ -38,3 +38,21 @@ export const drawRectangle = (mousePosition :mousePosition, width :number, lengh
 	robot.mouseToggle("up");
 
 }
+
+export const drawSquare = (mousePosition :mousePosition, side :number) : void => {
+
+	let { x, y } = mousePosition;
+
+	robot.mouseToggle("down");
+
+	robot.setMouseDelay(95);
+
+	robot.moveMouse(x += side, y);
+	robot.moveMouse(x, y -= side);
+	robot.moveMouse(x -= side, y);
+	robot.moveMouse(x, y += side);
+
+	robot.setMouseDelay(10);
+
+	robot.mouseToggle("up");
+}

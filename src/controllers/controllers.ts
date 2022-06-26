@@ -36,6 +36,9 @@ export const commandHandler = (data) => {
 		case "draw_rectangle":
 			Drawing.drawRectangle(mousePosition, definingParam, length);
 			break;
+		case "draw_square":
+			Drawing.drawSquare(mousePosition, definingParam);
+			break;
 	}
 
 	return command;
