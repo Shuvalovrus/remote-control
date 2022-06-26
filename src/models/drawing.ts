@@ -8,7 +8,7 @@ type mousePosition = {
 export const drawCircle = (mousePosition :mousePosition, radius:number) : void => {
 
 	robot.mouseToggle("down");
-	
+
 		for (let i = 0; i <= Math.PI * 2; i += 0.02) {
 
 		    const x = mousePosition.x + radius - (radius * Math.cos(i));
@@ -19,3 +19,22 @@ export const drawCircle = (mousePosition :mousePosition, radius:number) : void =
   	robot.mouseToggle("up");
 }
 
+
+export const drawRectangle = (mousePosition :mousePosition, width :number, lenght :number) : void => {
+
+	let { x, y } = mousePosition;
+
+	robot.mouseToggle("down");
+
+	robot.setMouseDelay(95);
+
+	robot.moveMouse(x += width, y);
+	robot.moveMouse(x, y -= lenght);
+	robot.moveMouse(x -= width, y);
+	robot.moveMouse(x, y += lenght);
+
+	robot.setMouseDelay(10);
+
+	robot.mouseToggle("up");
+
+}

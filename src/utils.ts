@@ -1,11 +1,12 @@
-type commandArray = [string, number]
+type commandArray = [string, number, number]
 
 export const getParams = (params): commandArray => {
 	console.log(params.toString());
-	let [command, step] = params.toString().split(' ');
+	let [command, definingParam, height] = params.toString().split(' ');
 
-	step = Number(step);
+	definingParam = Number(definingParam);
+	height = Number(height) || 0;
 
-	return [command, step];
+	return [command, definingParam, height];
 }
 

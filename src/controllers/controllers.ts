@@ -13,25 +13,28 @@ export const commandHandler = (data) => {
 
 	const mousePosition : mousePosition = robot.getMousePos();
 
-	const [command, step] = Utils.getParams(data);
+	const [command, definingParam, length] = Utils.getParams(data);
 
 	switch (command) {
 		case "mouse_position":
 		  	return (`${command} ${mousePosition.x + 'px'},${mousePosition.y + 'px'}`);
 		case "mouse_up":
-			robot.moveMouse(mousePosition.x, mousePosition.y - step);
+			robot.moveMouse(mousePosition.x, mousePosition.y - definingParam);
 			break;
 		case "mouse_right":
-			robot.moveMouse(mousePosition.x + step, mousePosition.y);
+			robot.moveMouse(mousePosition.x + definingParam, mousePosition.y);
 			break;
 		case "mouse_down":
-			robot.moveMouse(mousePosition.x, mousePosition.y + step);
+			robot.moveMouse(mousePosition.x, mousePosition.y + definingParam);
 			break;
 		case "mouse_left":
-			robot.moveMouse(mousePosition.x - step, mousePosition.y);
+			robot.moveMouse(mousePosition.x - definingParam, mousePosition.y);
 			break;
 		case "draw_circle":
-			Drawing.drawCircle(mousePosition,step);
+			Drawing.drawCircle(mousePosition,definingParam);
+			break;
+		case "draw_rectangle":
+			Drawing.drawRectangle(mousePosition, definingParam, length);
 			break;
 	}
 
