@@ -1,5 +1,4 @@
 import { WebSocketServer } from 'ws';
-
-const WS_PORT = 8181;
+import { WS_PORT } from '../../constants.js';
 
 export const wss = new WebSocketServer({ port: WS_PORT });
