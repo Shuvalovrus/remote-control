@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES6",
+        "module": "ES6",
+        "moduleResolution": "node16",
+        "outDir": "build",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "resolveJsonModule": true,
+        "strict": true,
+        "isolatedModules": true
+    },
+    "files": ["index.ts"],
+    "exclude": ["node_modules, **/*.spec.ts"]
+}
